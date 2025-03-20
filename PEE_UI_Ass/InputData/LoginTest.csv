@@ -1,0 +1,4 @@
+OBJECT,FIELD,VALUE,REQUIRED
+,,,,
+LoginPage,UserName,standard_user,*
+LoginPage,PassWord,secret_sauce,*
