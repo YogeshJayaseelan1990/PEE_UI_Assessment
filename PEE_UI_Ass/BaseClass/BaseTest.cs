@@ -16,7 +16,7 @@ namespace PEI_UI_Ass.Baseclass
         //Assume the Below url is the Dynamics 365 Login
         //Note : As we canot login with personal microsoft account with D365
         //and domain name is mandatory. We are using the sample test applciation
-        public String D365Url = "https://www.saucedemo.com/";
+        public String D365Url = "https://org10da1532.crm8.dynamics.com/main.aspx?appid=83431a7e-8c09-f011-bae4-000d3aca1dff&pagetype=dashboard&id=eaa6e6bb-4712-ec11-b6e7-00224820f09b&type=system&_canOverride=true";
 
 
 

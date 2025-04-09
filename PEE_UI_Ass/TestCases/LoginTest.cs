@@ -39,10 +39,15 @@ namespace PEI_UI_Ass.TestCases
         {
             driver.Navigate().GoToUrl(D365Url);
             LoginPage loginPage = new LoginPage(driver);
-            loginPage.TypeUserName(dictionary["LoginPage"]["UserName"]);
+            loginPage.TypeEmail(dictionary["LoginPage"]["UserName"]);
+            loginPage.ClickNextButton();
             loginPage.TypePassword(dictionary["LoginPage"]["PassWord"]);
-            Homepage homepage = loginPage.ClickLoginBtn();
+            loginPage.ClickSiginBtn();
+            Homepage homepage = loginPage.ClickYesBtn();
             homepage.GetHomePageHeader();
+            OpportunitiesPage oppPage = homepage.ClikOpportunities();
+            oppPage.ClikNewOpportunity();
+            Thread.Sleep(5000);
 
         }
 

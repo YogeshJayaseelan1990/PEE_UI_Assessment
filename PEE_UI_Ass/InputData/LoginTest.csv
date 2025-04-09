@@ -1,4 +1,4 @@
 OBJECT,FIELD,VALUE,REQUIRED
 ,,,,
-LoginPage,UserName,standard_user,*
-LoginPage,PassWord,secret_sauce,*
+LoginPage,UserName,Peiassesment@trainer007.onmicrosoft.com,*
+LoginPage,PassWord,PeiTest@2025,*

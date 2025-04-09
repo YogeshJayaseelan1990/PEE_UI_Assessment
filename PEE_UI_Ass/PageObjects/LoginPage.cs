@@ -22,26 +22,45 @@ namespace PEI_UI_Ass.PagesObjects
             SeleniumExtras.PageObjects.PageFactory.InitElements(driver, this);
         }
 
-        //UserName Element
-        [FindsBy(How=How.XPath, Using = "//input[@name='user-name']")]
-        private IWebElement username;
+        //Email Element
+        [FindsBy(How = How.XPath, Using = "//input[@type='email']")]
+        private IWebElement email;
 
+        //NextButton Element
+        [FindsBy(How = How.XPath, Using = "//input[@value='Next']")]
+        private IWebElement next;
+    
         //Password Element
-        [FindsBy(How = How.XPath, Using = "//input[@name='password']")]
+        [FindsBy(How = How.XPath, Using = "//input[@type='password']")]
         private IWebElement password;
 
-        //Login Element
-        [FindsBy(How = How.XPath, Using = "//input[@name='login-button']")]
-        private IWebElement loginButton;
+        //Signin Element
+        [FindsBy(How = How.XPath, Using = "//input[@value='Sign in']")]
+        private IWebElement signInButton;
 
-        //Method to Type on the suer name field 
-        public LoginPage TypeUserName(string UserName)
+        //YesButton Element
+        [FindsBy(How = How.XPath, Using = "//input[@value='Yes']")]
+        private IWebElement yesButton;
+
+        //Method to Type on the Email field 
+        public LoginPage TypeEmail(string UserName)
         {
             WebDriverWait wait = new WebDriverWait(driver, System.TimeSpan.FromSeconds(40));
-            wait.Until(driver => username.Displayed);
-            username.SendKeys(UserName);
+            wait.Until(driver => email.Displayed);
+            email.SendKeys(UserName);
             return this;
           
+        }
+
+
+        //Method to Click on the Next button
+        public LoginPage ClickNextButton()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, System.TimeSpan.FromSeconds(40));
+            wait.Until(driver => next.Displayed);
+            next.Click();
+            return this;
+
         }
 
         //Method to Type on the Password Field 
@@ -54,14 +73,23 @@ namespace PEI_UI_Ass.PagesObjects
 
         }
 
-        //Method to click on the Login Button
-        public Homepage ClickLoginBtn()
+        //Method to click on the SiginIn Button
+        public LoginPage ClickSiginBtn()
         {
             WebDriverWait wait = new WebDriverWait(driver, System.TimeSpan.FromSeconds(40));
-            wait.Until(driver => loginButton.Displayed);
-            loginButton.Click(); ;
+            wait.Until(driver => signInButton.Displayed);
+            signInButton.Click(); ;
+            return this;
 
-            Console.WriteLine("The login is successfull ");
+        }
+
+        public Homepage ClickYesBtn()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, System.TimeSpan.FromSeconds(40));
+            wait.Until(driver => yesButton.Displayed);
+            yesButton.Click(); ;
+
+            Console.WriteLine("The SignIn is successfull ");
             return new Homepage(driver);
 
         }
